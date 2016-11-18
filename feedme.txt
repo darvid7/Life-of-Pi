@@ -1,0 +1,17 @@
+Raspberry PI Notes
+$ ssh pi@192.168.0.8
+
+bring up config/reboot
+pi@imcrpi13:~ $ sudo raspi-config
+
+
+methods of connections: 
+1. Allows remote desktop in
+sudo app-get install xrdp
+download rdp on mac
+2. VMC server
+more responsive
+Virtual Network Computing (VNC) is a graphical desktop sharing system that uses the Remote Frame Buffer protocol (RFB) to remotely control another computer.
+
+Scan all IPs
+http://superuser.com/questions/124453/how-can-i-scan-the-local-network-for-connected-devices-mac-os
