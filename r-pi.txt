@@ -1,0 +1,37 @@
+*Raspberry PI*
+$ ssh pi@192.168.0.8
+
+bring up config/reboot
+pi@imcrpi13:~ $ sudo raspi-config
+
+Close = $exit
+
+*Methods of connections:*  [2 methods]
+*1. Allows remote desktop in*
+$ sudo app-get install xrdp
+download rdp on mac
+*2. VMC server*
+more responsive
+Virtual Network Computing (VNC) is a graphical desktop sharing system that uses the Remote Frame Buffer protocol (RFB) to remotely control another computer.
+
+boot up $ vncserver :1
+pw: rasppi
+open finder —> go to or ctrl k —> vnc://192.168.0.8:5901
+1 because of vncserver: 1 
+^ need to do this every time 
+
+*Scan all IPs*
+http://superuser.com/questions/124453/how-can-i-scan-the-local-network-for-connected-devices-mac-os
+
+*Transfer Files* [2 methods]
+*1. Shared Files Through Finder*
+$ sudo apt-get install netatalk
+in finder: afp://192.168.0.8
+
+*2. FTP Client*
+//ToDo
+
+*Tutorials*
+Current: https://www.youtube.com/watch?v=PAU4Lh3nD58&list=PLNnwglGGYoTvy37TSGFlv-aFkpg7owWrE
+To do: https://www.youtube.com/watch?v=Jj4pjfU_-jo&list=PLsa31gkyINsly6N_usaeHrtDPYnwxO-1Y
+
