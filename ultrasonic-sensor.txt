@@ -1,0 +1,38 @@
+*Ultrasonic Distance Sensors [HC-SR04]*
+- low freq = infrasound
+- high freq = ultrasound
+sense object disatnce using ultrasound reflection to calculate time taken to reflect ultrasound waves b/w sensor and solid object
+
+question: will a plastic bag be a solic object? 
+idea: use ultrasonic sensor to determine if bag full
+placements
+- top
+- side
+- rim & angled
+
+*4 pins on Ultrasonic Sensor*
+- Ground (GND):
+- Echo Pulose Output (ECHO):
+- Trigger Pulse Input (TRIG):
+- 5V Supply (Vcc):
+
+note: Output Signal (ECHO) is 5V, Raspberry PI GIPO is 3.3V so need resistors 
+
+*4 pins on Raspberry Pi*
+[Raspberry PI <-> Ultrasonic Sensor]
+- GPIO 5V (pin 2) <-> Vcc (5v power)
+- GPIO GND (pin 6) <-> GND (0v Ground)
+- GPIO 23 (pin 16) <-> TRIG (GIPO Output) 
+- GPIO 24 (pin 18) <-> Echo (GIPO Input)
+
+note: GPIO = general purpose input/output
+
+*Male to female jumper wires*
+Red = Vcc | breadboard = Orange
+Blue = TRIG | breadboard = Green
+Yellow = ECHO | breadboard = Purple
+BBlack = GND | breadboard = Grey 
+
+Ultrasonic sensor output (ECHO) will always be low (0V) unless triggered, then will output 5V (3.3 due to resistors)
+So set 1 GPIO pin as output to trigger sensor and one as input to detect ECHO voltage change 
+

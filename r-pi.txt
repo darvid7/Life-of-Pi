@@ -4,7 +4,9 @@ $ ssh pi@192.168.0.8
 bring up config/reboot
 pi@imcrpi13:~ $ sudo raspi-config
 
-Close = $exit
+Close termina session from mbp = $exit
+Shut down pi: sudo shutdown -h now 
+
 
 *Methods of connections:*  [2 methods]
 *1. Allows remote desktop in*

@@ -1,0 +1,9 @@
+$ ifconfig
+local ip is inet 192..
+
+# ping pi on LAN = ping [pi name].local
+$ ping davids-pi.local
+PING davids-pi.local (192.168.0.7): 56 data bytes
+64 bytes from 192.168.0.7: icmp_seq=0 ttl=64 time=2.275 ms
+64 bytes from 192.168.0.7: icmp_seq=1 ttl=64 time=2.343 ms
+64 bytes from 192.168.0.7: icmp_seq=2 ttl=64 time=2.046 ms
