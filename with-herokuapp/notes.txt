@@ -1,0 +1,4 @@
+make create's pi = test-pi
+find ip via $ ping test-pi.local
+
+note: default name is raspberrypi

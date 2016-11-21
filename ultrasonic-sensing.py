@@ -4,8 +4,8 @@ import time
 
 count = 1
 while (True):
+	# init things needed for sensing 
 	GPIO.setmode(GPIO.BCM)
-
 	# outout pin that trigers the sensor GIPO 23 (pin 16)
 	TRIG = 23
 	# input pin which reads return signal from sensor GPIO 24 (pin 18)
@@ -34,9 +34,13 @@ while (True):
 		pulse_end = time.time()
 
 	pulse_duration = pulse_end - pulse_start
+	print("~ Pulse duration: %smicro seconds" % pulse_duration)
 	distance = pulse_duration * 17150
+	print("~ Distance: %scm"  % distance)
 	distance = round(distance, 2)
 	print("Distance: %scm" % str(distance))
+
+	# similar to f.close i am assuming
 	GPIO.cleanup()
 	time.sleep(1)
 	count += 1

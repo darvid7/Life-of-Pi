@@ -31,7 +31,7 @@ note: GPIO = general purpose input/output
 Red = Vcc | breadboard = Orange
 Blue = TRIG | breadboard = Green
 Yellow = ECHO | breadboard = Purple
-BBlack = GND | breadboard = Grey 
+Black = GND | breadboard = Grey 
 
 Ultrasonic sensor output (ECHO) will always be low (0V) unless triggered, then will output 5V (3.3 due to resistors)
 So set 1 GPIO pin as output to trigger sensor and one as input to detect ECHO voltage change 

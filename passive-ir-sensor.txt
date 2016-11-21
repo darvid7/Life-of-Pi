@@ -1,0 +1,21 @@
+*Passive Infrared/IR Motion sensors*
+Can detect changes in IR levels in zones i.e. when a human enters a room
+
+3 pins
+- ground
+- digital out [will be high when motion detected]
+- 3-5 V in
+
+range ~ 7m
+100 - 70 deg detection range 
+
+plug 3 males to female jumper wires from PIR to 
+
+Orange = PIR-VCC 3-5 V in = Purple on pi
+White = PIR-OUT digital out = White on pi 
+Blue = PIR-GND ground = Grey on pi
+
+Output will always be low (0v) unless movement detected 
+
+# https://www.modmypi.com/blog/raspberry-pi-gpio-sensing-motion-detection
+

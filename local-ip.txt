@@ -7,3 +7,7 @@ PING davids-pi.local (192.168.0.7): 56 data bytes
 64 bytes from 192.168.0.7: icmp_seq=0 ttl=64 time=2.275 ms
 64 bytes from 192.168.0.7: icmp_seq=1 ttl=64 time=2.343 ms
 64 bytes from 192.168.0.7: icmp_seq=2 ttl=64 time=2.046 ms
+
+// finding ip of raspi
+ssh-keygen -R <host>
+# http://stackoverflow.com/questions/20840012/ssh-remote-host-identification-has-changed

@@ -4,13 +4,18 @@ $ ssh pi@192.168.0.8
 bring up config/reboot
 pi@imcrpi13:~ $ sudo raspi-config
 
-Close termina session from mbp = $exit
+Close terminal session from mbp = $exit
 Shut down pi: sudo shutdown -h now 
+>> poweroff 
 
+*Wifi through mpb*
+- get dlink driver
+- set ip via network prefs
+- turn on sharing wifi with gigabit/ethernet
 
 *Methods of connections:*  [2 methods]
 *1. Allows remote desktop in*
-$ sudo app-get install xrdp
+$ sudo apt-get install xrdp
 download rdp on mac
 *2. VMC server*
 more responsive
@@ -29,6 +34,8 @@ http://superuser.com/questions/124453/how-can-i-scan-the-local-network-for-conne
 *1. Shared Files Through Finder*
 $ sudo apt-get install netatalk
 in finder: afp://192.168.0.8
+user: pi
+pw: raspberry
 
 *2. FTP Client*
 //ToDo
