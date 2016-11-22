@@ -14,6 +14,7 @@ try:
 	while(True):
 		if person == threshold:
 			print"PERSON"
+			# send http request here 
 			time.sleep(2)
 
 			person = 0

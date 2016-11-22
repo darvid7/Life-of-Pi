@@ -6,10 +6,6 @@ import time
 import json
 # print(urllib3.__version__)
 
-from uuid import getnode as get_mac
-mac = get_mac()							# mac address of pi 
-
-
 import requests
 
 count = 1
@@ -49,19 +45,22 @@ while (True):
         pulse_end = time.time()
 
     pulse_duration = pulse_end - pulse_start
-    print("~ Pulse duration: %smicro seconds" % pulse_duration)
+    # print("~ Pulse duration: %smicro seconds" % pulse_duration)
     distance = pulse_duration * 17150
-    print("~ Distance: %scm"  % distance)
+    # print("~ Distance: %scm"  % distance)
     # distance = round(distance, 2)
     print("Distance: %scm" % str(distance))
-    
+    if distance < 24:
+        if distance < 22:
+            print("~~THRESHOLD: BIN GREATHER THAN 3/4 FULL!!~~")
+        else:
+            print("~~THRESHOLD: BIN 3/4 FULL~~")
     data = {'dist': distance}
 
-    encoded_body = json.dumps(dict(
-    	[
-    	('dist', distance), ('mac', hex(mac))			# send mac address of hardware to server
-    	]))
-    print(encoded_body)
+    encoded_body = json.dumps(dict([
+        ('id', 1),('distance', distance)
+    ]))
+    print("http post: " + encoded_body)
     # http = urllib3.PoolManager()
     # r = http.request('POST', url, 
     #          headers={'Content-Type': 'application/json'}, 
@@ -72,10 +71,11 @@ while (True):
     # response = urllib2.urlopen(url, data)
     # response.request ('POST', route, data)
      # 
-
-    r = requests.post(url, headers=header, data=encoded_body)
-
-    print(r.status_code, r.reason)
+    # try:
+        # r = requests.post(url, headers=header, data=encoded_body)
+    # except:
+        # pass
+    # print(r.status_code, r.reason)
     # similar to f.close i am assuming
     GPIO.cleanup()
     time.sleep(1)
